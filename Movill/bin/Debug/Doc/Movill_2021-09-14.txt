@@ -1,0 +1,37 @@
+2021-09-14 11:17:55  [Movill Client] 프로그램 시작
+2021-09-14 11:18:10  ==========================================================
+2021-09-14 11:18:10  [Movill Client] 테스트 입구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-14 11:18:10  [Send to Movill] Http Web Request
+2021-09-14 11:18:10  [Recv from Movill] Unauthenticated, invalid token(401)
+2021-09-14 11:18:10  [Send to Movill] Authorization : 액세스 토큰 요청
+2021-09-14 11:18:10  [Recv from Movill] Authorization : 액세스 토큰 가져오기 성공b8IwvHwPYvzfVzT*****
+2021-09-14 11:18:11  [Send to Movill] Http Web Request
+2021-09-14 11:18:11  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-14 11:18:14  ==========================================================
+2021-09-14 11:18:14  [Movill Client] 테스트 출구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-14 11:18:14  [Send to Movill] Http Web Request
+2021-09-14 11:18:15  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-14 11:18:15  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-14 11:18:18  ==========================================================
+2021-09-14 11:18:18  [Movill Client] 테스트 입구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-14 11:18:18  [Send to Movill] Http Web Request
+2021-09-14 11:18:18  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-14 11:18:20  ==========================================================
+2021-09-14 11:18:20  [Movill Client] 테스트 출구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-14 11:18:20  [Send to Movill] Http Web Request
+2021-09-14 11:18:21  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-14 11:18:21  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-14 11:18:22  [Movill Client] 프로그램 종료!!
+2021-09-14 14:41:30  [Movill Client] 프로그램 시작
+2021-09-14 14:41:58  [Movill Client] 프로그램 시작
+2021-09-14 14:44:12  [Movill Client] 프로그램 시작
+2021-09-14 14:46:36  [Movill Client] 프로그램 시작
+2021-09-14 14:46:52  [Movill Client] 프로그램 종료!!
+2021-09-14 14:46:59  [Movill Client] 프로그램 시작
+2021-09-14 14:47:12  [Movill Client] 프로그램 종료!!
+2021-09-14 14:47:14  [Movill Client] 프로그램 시작
+2021-09-14 14:47:36  [Movill Client] 프로그램 종료!!
+2021-09-14 14:52:31  [Movill Client] 프로그램 시작
+2021-09-14 14:52:43  [Movill Client] 프로그램 종료!!
+2021-09-14 14:53:50  [Movill Client] 프로그램 시작
+2021-09-14 14:54:57  [Movill Client] 프로그램 시작

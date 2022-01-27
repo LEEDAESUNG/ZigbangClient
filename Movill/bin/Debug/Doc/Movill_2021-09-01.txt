@@ -1,0 +1,31 @@
+2021-09-01 14:04:40  [Movill] 프로그램 시작
+2021-09-01 14:06:52  [Movill] 프로그램 종료!!
+2021-09-01 14:07:15  [Movill] 프로그램 시작
+2021-09-01 14:24:21  [Movill] 프로그램 시작
+2021-09-01 14:24:42  [Movill] 프로그램 시작
+2021-09-01 14:25:36  [Movill] 프로그램 시작
+2021-09-01 14:36:53  [Movill] 프로그램 시작
+2021-09-01 14:37:12  [Movill] 프로그램 종료!!
+2021-09-01 14:38:57  [Movill] 프로그램 시작
+2021-09-01 16:45:01  [Movill] 프로그램 시작
+2021-09-01 16:45:04  [Movill] 프로그램 종료!!
+2021-09-01 17:41:50  [Movill] 프로그램 시작
+2021-09-01 17:42:18  [Movill] 프로그램 시작
+2021-09-01 17:43:32  [Movill] 프로그램 시작
+2021-09-01 17:43:43  [Movill] 프로그램 종료!!
+2021-09-01 17:43:55  [Movill] 프로그램 시작
+2021-09-01 17:44:01  [AGENT] 테스트 입구버튼 누름
+2021-09-01 17:44:01  [Send to Movill] Http Web Request
+2021-09-01 17:44:01  [Recv from Movill] Response : Unauthenticated, invalid token(401)
+2021-09-01 17:44:01  [Recv from Movill] FAILED!! 111가1111:원격 서버에서 (401) 권한이 없음 오류를 반환했습니다. ... retry1
+2021-09-01 17:44:01  [Send to Movill] Authorization : 액세스 토큰 요청
+2021-09-01 17:44:01  [Recv from Movill] Authorization : 액세스 토큰 가져오기 성공s4MJO4VYfPTemXx*****
+2021-09-01 17:44:02  [Send to Movill] Http Web Request
+2021-09-01 17:44:02  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-01 17:44:03  [AGENT] 테스트 출구버튼 누름
+2021-09-01 17:44:03  [Send to Movill] Http Web Request
+2021-09-01 17:44:03  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-01 17:44:10  [AGENT] 테스트 출구버튼 누름
+2021-09-01 17:44:10  [Send to Movill] Http Web Request
+2021-09-01 17:44:10  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-01 17:44:13  [Movill] 프로그램 종료!!

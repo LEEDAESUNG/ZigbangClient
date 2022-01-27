@@ -1,0 +1,2009 @@
+define({ "api": [
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getIONData",
+    "title": "미등록 일반차량 출입조회",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getIONData?Carno=100모1001&StartDatetime=2020-12-12 00:00:00&EndDatetime=2020-12-16 23:59:59 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetExternalInOutSearch",
+    "group": "External",
+    "description": "<p>미등록일반차량 출입조회 입차조회 시작일부터 종료일까지 3일 제한</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "StartDatetime",
+            "description": "<p>입차조회시작일</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "EndDatetime",
+            "description": "<p>입차조회종료일</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>미등록차량 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "parkno",
+            "description": "<p>주차장번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "indatetime",
+            "description": "<p>입차일시(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "outdatetime",
+            "description": "<p>출차일시(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000002\",\n      \"parkno\": \"1\",\n      \"carNo\": \"100모1001\",\n      \"indatetime\": \"2020-12-15 12:03:27\",\n      \"outdatetime\": \"2020-12-16 15:04:12\"\n    },\n    {\n      \"tkNo\": \"00000001\",\n      \"parkno\": \"1\",\n      \"carNo\": \"100모1001\",\n      \"indatetime\": \"2020-12-12 02:13:47\",\n      \"outdatetime\": \"2020-12-13 15:15:15\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getIONData.js",
+    "groupTitle": "External"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getGateStatus",
+    "title": "차단기 상태조회",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getGateStatus \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetHealthCheck",
+    "group": "HealthCheck",
+    "description": "<p>차단기 상태조회 HTTP/1.1 200 OK 로 서버상태 양호 판단</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getGateStatus.js",
+    "groupTitle": "HealthCheck"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/delCustInfo",
+    "title": "정기차량 삭제",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /delCustInfo \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200모빌1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\",\n         \"TKNo\":\"00000004\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "DelResidentRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 차량삭제시 발급된 키(UUID or IDX)를 포함하여 삭제</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "TKNo",
+            "description": "<p>정기권번호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 320\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/delCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getIOSData",
+    "title": "정기차량 출입조회",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getIOSData?Carno=100모빌1001&StartDatetime=2020-12-12 00:00:00&EndDatetime=2020-12-20 23:59:59 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetRegularInOutSearch",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 출입조회 입차조회시작일부터 종료일까지 3 일제한</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "StartDatetime",
+            "description": "<p>입차조회시작일(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "EndDatetime",
+            "description": "<p>입차조회종료일(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "parkno",
+            "description": "<p>주자장번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "indatetime",
+            "description": "<p>입차일시(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "outdatetime",
+            "description": "<p>출차일시(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "instatusno",
+            "defaultValue": "0",
+            "description": "<p>입차상태번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "outstatusno",
+            "defaultValue": "0",
+            "description": "<p>출차상태번호</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000002\",\n      \"parkno\": \"1\",\n      \"carNo\": \"100모빌1001\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"indatetime\": \"2020-12-20 12:12:23\",\n      \"outdatetime\": \"2020-12-20 20:30:34\",\n      \"instatusno\": 0,\n      \"outstatusno\": 0\n    },\n    {\n      \"tkNo\": \"00000001\",\n      \"parkno\": \"1\",\n      \"carNo\": \"100모빌1001\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"indatetime\": \"2020-12-12 08:12:21\",\n      \"outdatetime\": \"2020-12-12 23:20:24\",\n      \"instatusno\": 0,\n      \"outstatusno\": 0\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getIOSData.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.2.0",
+    "type": "get",
+    "url": "/getAllCustInfo",
+    "title": "정기차량 전체목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getAllCustInfo \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetResidentAllRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 단지내 차량 전체목록(요청값 없음)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "groupNo",
+            "defaultValue": "0",
+            "description": "<p>입주민 유형별 그룹핑 번호(선택)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>차주명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contact",
+            "description": "<p>차주연락처</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effStart",
+            "description": "<p>정기권 시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effEnd",
+            "description": "<p>정기권 종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "chkUse",
+            "defaultValue": "0",
+            "description": "<p>정기권 사용유무 (0:유, 1:무)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000001\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"01나4158\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모빌\",\n      \"contact\": \"010-5395-9510\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    },\n    {\n      \"tkNo\": \"00000002\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"02보9838\",\n      \"dong\": \"101\",\n      \"ho\": \"102\",\n      \"name\": \"서모빌\",\n      \"contact\": \"010-9014-6635\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2099-12-30\",\n      \"chkUse\": 0\n    },\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getAllCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getAllCustInfo",
+    "title": "정기차량 전체목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getAllCustInfo \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetResidentAllRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 전체목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "groupNo",
+            "defaultValue": "0",
+            "description": "<p>입주민 유형별 그룹핑 번호(선택)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>차주명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contact",
+            "description": "<p>차주연락처</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effStart",
+            "description": "<p>정기권 시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effEnd",
+            "description": "<p>정기권 종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "chkUse",
+            "defaultValue": "0",
+            "description": "<p>정기권 사용유무 (0:유, 1:무)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000001\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"01나4158\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모빌\",\n      \"contact\": \"010-5395-9510\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    },\n    {\n      \"tkNo\": \"00000002\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"02보9838\",\n      \"dong\": \"101\",\n      \"ho\": \"102\",\n      \"name\": \"서모빌\",\n      \"contact\": \"010-9014-6635\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2099-12-30\",\n      \"chkUse\": 0\n    },\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getAllCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.2.0",
+    "type": "get",
+    "url": "/getCustInfo",
+    "title": "정기차량 세대목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getCustInfo?Dong=101&Ho=101 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetResidentRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 세대내 차량목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "Carno",
+            "defaultValue": "01나4158",
+            "description": "<p>차량번호(선택)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "groupNo",
+            "defaultValue": "0",
+            "description": "<p>입주민 유형별 그룹핑 번호(선택)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>차주명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contact",
+            "description": "<p>차주연락처</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effStart",
+            "description": "<p>정기권 시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effEnd",
+            "description": "<p>정기권 종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "chkUse",
+            "defaultValue": "0",
+            "description": "<p>정기권 사용유무 (0:유, 1:무)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000001\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"01나4158\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모빌\",\n      \"contact\": \"010-5395-9510\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    },\n    {\n      \"tkNo\": \"00000002\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"02나8541\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모발\",\n      \"contact\": \"010-2378-4410\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    }\n  ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getCustInfo",
+    "title": "정기차량 세대목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getCustInfo \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetResidentRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기차량 세대내 차량목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권 티켓번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "groupNo",
+            "defaultValue": "0",
+            "description": "<p>입주민 유형별 그룹핑 번호(선택)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>차주명</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "contact",
+            "description": "<p>차주연락처</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effStart",
+            "description": "<p>정기권 시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "effEnd",
+            "description": "<p>정기권 종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "chkUse",
+            "defaultValue": "0",
+            "description": "<p>정기권 사용유무 (0:유, 1:무)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"tkNo\": \"00000001\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"01나4158\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모빌\",\n      \"contact\": \"010-5395-9510\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    },\n    {\n      \"tkNo\": \"00000002\",\n      \"groupNo\": \"1\",\n      \"carNo\": \"02나8541\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"name\": \"허모발\",\n      \"contact\": \"010-2378-4410\",\n      \"remark\": \"기타메모\",\n      \"effStart\": \"2019-05-29\",\n      \"effEnd\": \"2199-12-30\",\n      \"chkUse\": 0\n    }\n  ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/setCustInfo",
+    "title": "정기차량 등록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /getCustInfo \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200모빌1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\",\n         \"EffStart\":\"2020-12-24\",\n         \"EffEnd\":\"2020-12-25\",\n         \"Name\":\"모빌러\",\n         \"Contact\":\"010-1234-5678\",\n         \"Remark\":\"비고\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "PostResidentRegular",
+    "group": "Regular",
+    "description": "<p>입주민 정기등록차량 저장</p>",
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>정기등록 차량번호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "EffStart",
+            "description": "<p>등록시작일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "EffEnd",
+            "description": "<p>등록마감일</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "Name",
+            "description": "<p>차주명</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "Contact",
+            "description": "<p>차주연락처</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "Remark",
+            "description": "<p>비고</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간</p>"
+          },
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "tkNo",
+            "description": "<p>정기권번호</p>"
+          },
+          {
+            "group": "200",
+            "type": "Number",
+            "optional": false,
+            "field": "enrollType",
+            "description": "<p>등록타입(1:신규, 2:기존내용변경)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nServer: Kestrel\nX-Powered-By: ASP.NET\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"carNo\": \"23모빌2001\",\n  \"tkNo\": \"00000004\",\n  \"enrollType\": 1\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setCustInfo.js",
+    "groupTitle": "Regular"
+  },
+  {
+    "version": "0.3.0",
+    "type": "post",
+    "url": "/delReserveCar",
+    "title": "방문신청차량 삭제",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /delReserveCar \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200방문1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\",\n         \"Belong\":\"방문차량토큰키\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "DelVisit",
+    "group": "Visit",
+    "description": "<p>방문차량 등록 시 발급된 키(UUID or IDX)를 포함하여 삭제</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Belong",
+            "description": "<p>토큰값</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 320\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/delReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.2.0",
+    "type": "post",
+    "url": "/delReserveCar",
+    "title": "방문신청차량 삭제",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /delReserveCar \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200방문1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "DelVisit",
+    "group": "Visit",
+    "description": "<p>방문차량 등록 시 발급된 키(UUID or IDX)를 포함하여 삭제</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "Belong",
+            "description": "<p>토큰값</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 320\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/delReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/delReserveCar",
+    "title": "방문신청차량 삭제",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /delReserveCar \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200방문1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "DelVisit",
+    "group": "Visit",
+    "description": "<p>방문차량 등록 시 발급된 키(UUID or IDX)를 포함하여 삭제</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 320\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/delReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getIOReserve",
+    "title": "방문신청차량 출입조회",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getIOReserve?Carno=200모1001&Reservestart=2020-12-01 00:00:00&Reserveend=2020-12-04 23:59:59 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetVisitInOutSearch",
+    "group": "Visit",
+    "description": "<p>방문차량 출입조회 입차조회 시작일부터 종료일까지 3 일제한</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "parkno",
+            "description": "<p>주차장번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "indatetime",
+            "description": "<p>입차일시(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "outdatetime",
+            "description": "<p>출차일시(yyyy-MM-dd HH:mm:ss)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 450\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"parkno\": \"1\",\n      \"carNo\": \"200모1001\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"indatetime\": \"2020-12-01 21:16:17\",\n      \"outdatetime\": \"2020-12-02 10:08:13\"\n    },\n    {\n      \"parkno\": \"1\",\n      \"carNo\": \"200모1001\",\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"indatetime\": \"2020-12-03 08:13:17\",\n      \"outdatetime\": \"2020-12-03 10:28:23\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getIOReserve.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.3.0",
+    "type": "get",
+    "url": "/getReserveCar",
+    "title": "방문신청차량 목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getReserveCar?Dong=101&Ho=101 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetVisitInfoSearch",
+    "group": "Visit",
+    "description": "<p>입주민 정기차량 전체목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "vlaues",
+            "description": "<p>방문차량목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reserveStart",
+            "description": "<p>예약방문시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reserveEnd",
+            "description": "<p>예약방문종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "belong",
+            "description": "<p>토큰값</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"carNo\": \"200모2012\",\n      \"reserveStart\": \"2020-12-19\",\n      \"reserveEnd\": \"2020-12-20\",\n      \"remark\": \"\",\n      \"belong\": \"정기차량토큰키\"\n    },\n    {\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"carNo\": \"200모2012\",\n      \"reserveStart\": \"2020-12-19\",\n      \"reserveEnd\": \"2020-12-18\",\n      \"remark\": \"\",\n      \"belong\": \"정기차량토큰키\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.2.0",
+    "type": "get",
+    "url": "/getReserveCar",
+    "title": "방문신청차량 목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getReserveCar?Dong=101&Ho=101 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetVisitInfoSearch",
+    "group": "Visit",
+    "description": "<p>입주민 정기차량 전체목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "vlaues",
+            "description": "<p>방문차량목록</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "CarNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ReserveStart",
+            "description": "<p>예약방문시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ReserveEnd",
+            "description": "<p>예약방문종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Remark",
+            "description": "<p>비고</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Belong",
+            "description": "<p>토큰값</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"Dong\": \"101\",\n      \"Ho\": \"101\",\n      \"CarNo\": \"200모2012\",\n      \"ReserveStart\": \"2020-12-19\",\n      \"ReserveEnd\": \"2020-12-20\",\n      \"Remark\": \"\"\n    },\n    {\n      \"Dong\": \"101\",\n      \"Ho\": \"101\",\n      \"CarNo\": \"200모2012\",\n      \"ReserveStart\": \"2020-12-19\",\n      \"ReserveEnd\": \"2020-12-18\",\n      \"Remark\": \"\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.1.0",
+    "type": "get",
+    "url": "/getReserveCar",
+    "title": "방문신청차량 목록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X GET /getReserveCar?Dong=101&Ho=101 \\\n     -H \"Authorization: Bearer your-token-key\" \\",
+        "type": "curl"
+      }
+    ],
+    "name": "GetVisitInfoSearch",
+    "group": "Visit",
+    "description": "<p>입주민 정기차량 전체목록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "carNo",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ReserveStart",
+            "description": "<p>예약방문시작일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "ReserveEnd",
+            "description": "<p>예약방문종료일(yyyy-MM-dd)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>비고</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 1017\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"values\": [\n    {\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"carNo\": \"200모2012\",\n      \"reserveStart\": \"2020-12-19\",\n      \"reserveEnd\": \"2020-12-20\",\n      \"remark\": \"\"\n    },\n    {\n      \"dong\": \"101\",\n      \"ho\": \"101\",\n      \"carNo\": \"200모2012\",\n      \"reserveStart\": \"2020-12-15\",\n      \"reserveEnd\": \"2020-12-18\",\n      \"remark\": \"\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/getReserveCar.js",
+    "groupTitle": "Visit"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/setReserveCar",
+    "title": "방문신청차량 등록",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /setReserveCar \\\n     -H \"Authorization: Bearer your-token-key\" \\\n     -d '{\n         \"Carno\":\"200모빌1001,\n         \"Dong\":\"101\",\n         \"Ho\":\"101\",\n         \"Reservestart\":\"2020-12-24\",\n         \"Reserveend\":\"2020-12-25\",\n         \"Remark\":\"비고\"\n       }'",
+        "type": "curl"
+      }
+    ],
+    "name": "PostVisit",
+    "group": "Visit",
+    "description": "<p>방문차량등록 저장 후 해당 ROW KEY 발급 ex) 기본타입은 해당 저장 ROW IDNDEX Number를 보내며, 필수값이다. 부득이하게 문자열로 보낼경우 경우 UUID 형태의 &quot;ea374fe0-7d5d-4233-8d0d-3938c97e0c4f&quot; 도 가능하다.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Carno",
+            "description": "<p>차량번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Dong",
+            "description": "<p>아파트 동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Ho",
+            "description": "<p>아파트 호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Reservestart",
+            "description": "<p>예약방문시작일</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Reserveend",
+            "description": "<p>예약방문종료일</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Remark",
+            "description": "<p>비고</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "resultCode",
+            "description": "<p>응답코드</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resultMessage",
+            "description": "<p>응답메세지</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>응답시간(yyyy-MM-dd HH:mm:ss)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Belong",
+            "description": "<p>토큰값</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nTransfer-Encoding: chunked\nContent-Type: application/json; charset=utf-8\nContent-Length: 320\nDate: Wed, 16 Dec 2020 02:06:17 GMT\n{\n  \"resultCode\": 1,\n  \"resultMessage\": \"SUCCESS\",\n  \"responseTime\": \"2020-12-16 11:06:17\",\n  \"belong\": 1234\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setReserveCar.js",
+    "groupTitle": "Visit"
+  }
+] });

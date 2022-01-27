@@ -1,0 +1,14 @@
+C:\Movill\Movill\bin\Debug\Movill.exe.config
+C:\Movill\Movill\bin\Debug\Movill.exe
+C:\Movill\Movill\bin\Debug\Movill.pdb
+C:\Movill\Movill\bin\Debug\Caching.dll
+C:\Movill\Movill\bin\Debug\Newtonsoft.Json.dll
+C:\Movill\Movill\bin\Debug\SimpleUdp.dll
+C:\Movill\Movill\bin\Debug\Newtonsoft.Json.xml
+C:\Movill\Movill\obj\Debug\Movill.Form1.resources
+C:\Movill\Movill\obj\Debug\Movill.Properties.Resources.resources
+C:\Movill\Movill\obj\Debug\Movill.csproj.GenerateResource.cache
+C:\Movill\Movill\obj\Debug\Movill.csproj.CoreCompileInputs.cache
+C:\Movill\Movill\obj\Debug\Movill.csproj.CopyComplete
+C:\Movill\Movill\obj\Debug\Movill.exe
+C:\Movill\Movill\obj\Debug\Movill.pdb

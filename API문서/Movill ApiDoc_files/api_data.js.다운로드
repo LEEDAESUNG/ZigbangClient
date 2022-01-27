@@ -1,0 +1,264 @@
+define({ "api": [
+  {
+    "version": "0.2.0",
+    "type": "post",
+    "url": "/v2/car-manager/LPR/in/car/info",
+    "title": "입차 LPR 차량정보",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /v2/car-manager/LPR/in/car/info \\\n     -H \"Authorization: Bearer token-key\" \\\n     -H 'Content-Type: application/json' \\\n     -d '{\n           \"apt_idx\" : 2865,\n           \"car_number\" : \"82심1234\",\n           \"lpr_number\" : \"1\",\n           \"dong\" : \"0\",\n           \"ho\" : \"0\",\n           \"in_date\" : 1577804400000\n         }'",
+        "type": "curl"
+      }
+    ],
+    "name": "SetInCarInfo",
+    "group": "InOutCar",
+    "description": "<p>출차 LPR 차량정보등록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "apt_idx",
+            "description": "<p>아파트 인덱스</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_number",
+            "description": "<p>차량 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lpr_number",
+            "description": "<p>차단기 장비 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "dong",
+            "defaultValue": "0",
+            "description": "<p>동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ho",
+            "defaultValue": "0",
+            "description": "<p>호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "in_date",
+            "description": "<p>입차 날짜 (Unix Timestamp)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 46\n{\n  \"code\": \"0000\",\n  \"message\": \"SUCCESS\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setInCarInfo.js",
+    "groupTitle": "InOutCar"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/v2/car-manager/LPR/in/car/info",
+    "title": "입차 LPR 차량정보",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /v2/car-manager/LPR/in/car/info \\\n     -H \"Authorization: Bearer token-key\" \\\n     -H 'Content-Type: application/json' \\\n     -d '{\n           \"apt_idx\" : 2865,\n           \"car_number\" : \"82심1234\",\n           \"in_date\" : 1577804400000\n         }'",
+        "type": "curl"
+      }
+    ],
+    "name": "SetInCarInfo",
+    "group": "InOutCar",
+    "description": "<p>출차 LPR 차량정보등록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "apt_idx",
+            "description": "<p>아파트 인덱스</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_number",
+            "description": "<p>차량 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "in_date",
+            "description": "<p>입차 날짜 (Unix Timestamp)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 46\n{\n  \"code\": \"0000\",\n  \"message\": \"SUCCESS\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setInCarInfo.js",
+    "groupTitle": "InOutCar"
+  },
+  {
+    "version": "0.2.0",
+    "type": "post",
+    "url": "/v2/car-manager/LPR/out/car/info",
+    "title": "출차 LPR 차량정보",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /v2/car-manager/LPR/out/car/info \\\n     -H \"Authorization: Bearer token-key\" \\\n     -H 'Content-Type: application/json' \\\n     -d '{\n           \"apt_idx\" : 2865,\n           \"car_number\" : \"82심1234\",\n           \"lpr_number\" : \"1\",\n           \"dong\" : \"0\",\n           \"ho\" : \"0\",\n           \"out_date\" : 1577804400000\n         }'",
+        "type": "curl"
+      }
+    ],
+    "name": "SetOutCarInfo",
+    "group": "InOutCar",
+    "description": "<p>출차 LPR 차량정보등록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "apt_idx",
+            "description": "<p>아파트 인덱스</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_number",
+            "description": "<p>차량 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lpr_number",
+            "description": "<p>차단기 장비 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "dong",
+            "defaultValue": "0",
+            "description": "<p>동</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "ho",
+            "defaultValue": "0",
+            "description": "<p>호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "out_date",
+            "description": "<p>출차 날짜 (Unix Timestamp)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 46\n{\n  \"code\": \"0000\",\n  \"message\": \"SUCCESS\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setOutCarInfo.js",
+    "groupTitle": "InOutCar"
+  },
+  {
+    "version": "0.1.0",
+    "type": "post",
+    "url": "/v2/car-manager/LPR/out/car/info",
+    "title": "출차 LPR 차량정보",
+    "examples": [
+      {
+        "title": "curl",
+        "content": "curl -X POST /v2/car-manager/LPR/out/car/info \\\n     -H \"Authorization: Bearer token-key\" \\\n     -H 'Content-Type: application/json' \\\n     -d '{\n           \"apt_idx\" : 2865,\n           \"car_number\" : \"82심1234\",\n           \"out_date\" : 1577804400000\n         }'",
+        "type": "curl"
+      }
+    ],
+    "name": "SetOutCarInfo",
+    "group": "InOutCar",
+    "description": "<p>출차 LPR 차량정보등록</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "apt_idx",
+            "description": "<p>아파트 인덱스</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_number",
+            "description": "<p>차량 번호</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "out_date",
+            "description": "<p>입차 날짜 (Unix Timestamp)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\nContent-Type: application/json\nContent-Length: 46\n{\n  \"code\": \"0000\",\n  \"message\": \"SUCCESS\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "dist/src/setOutCarInfo.js",
+    "groupTitle": "InOutCar"
+  }
+] });

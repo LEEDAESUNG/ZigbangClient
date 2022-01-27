@@ -1,0 +1,28 @@
+define({
+  "name": "Movill Smart Parking API",
+  "version": "0.3.0",
+  "description": "Documentation for the REST api access provided at AcmeCorp",
+  "title": "Movill ApiDoc",
+  "url": "https://{your-apart-domain}:{port}",
+  "header": {
+    "title": "Introduction",
+    "content": "<p><img src=\"./img/movill_logo.png\" alt=\"movill\"> <font size=\"6\" style=\"vertical-align: bottom;\">Movill external vendor integration API document!</font></p>\n<h3><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization\">Authorization</a></h3>\n<blockquote>\n<p>Admin user access only.<br>\nThis optional description belong to the group admin.</p>\n</blockquote>\n<pre class=\"prettyprint\">-H \"Authorization: Bearer your-token-key\"\n</code></pre>\n<ul>\n<li>Refresh Basic token or Direct Bearer token your choice.</li>\n</ul>\n<h3>HTTP STATUS CODE</h3>\n<table>\n<thead>\n<tr>\n<th style=\"text-align:center\"><center>CODE</center></th>\n<th style=\"text-align:left\"><center>Message</center></th>\n<th style=\"text-align:left\"><center>Detail Message</center></th>\n<th style=\"text-align:center\"><center>HTTP</center></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align:center\"><strong>1</strong></td>\n<td style=\"text-align:left\">SUCCESS</td>\n<td style=\"text-align:left\">성공</td>\n<td style=\"text-align:center\"><em>200</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>2</strong></td>\n<td style=\"text-align:left\">Unauthorized, invalid token</td>\n<td style=\"text-align:left\">권한이 없습니다. 토큰을 확인 바랍니다</td>\n<td style=\"text-align:center\"><em>401</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>3</strong></td>\n<td style=\"text-align:left\">Unauthorized, invalid token</td>\n<td style=\"text-align:left\">권한이 없습니다. 시크릿을 확인 바랍니다</td>\n<td style=\"text-align:center\"><em>401</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>4</strong></td>\n<td style=\"text-align:left\">Invalid parameters</td>\n<td style=\"text-align:left\">올바르지 않은 파라미터입니다</td>\n<td style=\"text-align:center\"><em>400</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>5</strong></td>\n<td style=\"text-align:left\">Invalid parameters</td>\n<td style=\"text-align:left\">차량번호 및 날짜타입이 맞지 않습니다</td>\n<td style=\"text-align:center\"><em>400</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>6</strong></td>\n<td style=\"text-align:left\">Invalid parameters</td>\n<td style=\"text-align:left\">방문기간이 초과 되었습니다</td>\n<td style=\"text-align:center\"><em>400</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>7</strong></td>\n<td style=\"text-align:left\">Not Found</td>\n<td style=\"text-align:left\">페이지를 찾을 수 없습니다</td>\n<td style=\"text-align:center\"><em>404</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>8</strong></td>\n<td style=\"text-align:left\">Requested method is not supported</td>\n<td style=\"text-align:left\">지원하지 않는 http 메소드 입니다</td>\n<td style=\"text-align:center\"><em>405</em></td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>99</strong></td>\n<td style=\"text-align:left\">Internal Server Error</td>\n<td style=\"text-align:left\">서버에서 에러가 발생했습니다</td>\n<td style=\"text-align:center\"><em>500</em></td>\n</tr>\n</tbody>\n</table>\n"
+  },
+  "footer": {
+    "title": "Best practices",
+    "content": "<h2>Movill</h2>\n<ul>\n<li>Suggestions, contact, support and error reporting on <a href=\"daniel.shim@movill.net\">Email : daniel.shim@movill.net</a></li>\n<li>Last update 2020.12.18</li>\n</ul>\n"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  },
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2021-04-09T06:11:05.449Z",
+    "url": "https://apidocjs.com",
+    "version": "0.27.1"
+  }
+});

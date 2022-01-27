@@ -1,0 +1,14 @@
+2021-09-02 11:14:01  ==========================================================
+2021-09-02 11:14:01  [Movill Client] 테스트 입구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-02 11:14:01  [Send to Movill] Http Web Request
+2021-09-02 11:14:01  [Recv from Movill] Unauthenticated, invalid token(401)
+2021-09-02 11:14:01  [Send to Movill] Authorization : 액세스 토큰 요청
+2021-09-02 11:14:02  [Recv from Movill] Authorization : 액세스 토큰 가져오기 성공l931QvfI9USpqDQ*****
+2021-09-02 11:14:03  [Send to Movill] Http Web Request
+2021-09-02 11:14:03  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-02 11:14:15  ==========================================================
+2021-09-02 11:14:15  [Movill Client] 테스트 출구버튼 누름, 차량번호:111가1111, 동:101, 호수:202
+2021-09-02 11:14:15  [Send to Movill] Http Web Request
+2021-09-02 11:14:15  [Recv from Movill] {  "code": "0000",  "message": "SUCCESS"}
+2021-09-02 11:14:15  [Recv from Movill] SUCCESS 111가1111:SUCCESS
+2021-09-02 11:14:28  [Movill Client] 프로그램 종료!!
